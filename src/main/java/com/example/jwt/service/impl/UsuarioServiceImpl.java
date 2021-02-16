@@ -6,13 +6,13 @@ import com.example.jwt.repository.UsuarioRepository;
 import com.example.jwt.rest.web.dto.UsuarioDTO;
 import com.example.jwt.rest.web.exception.UsuarioJaExistenteException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 
 import javax.validation.Valid;
 import java.util.HashSet;

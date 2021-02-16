@@ -1,1 +1,1 @@
-# jwt
+# template httpBasic

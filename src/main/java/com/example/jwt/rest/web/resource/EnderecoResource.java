@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/enderecos/")
+@RequestMapping("/api/enderecos")
 public class EnderecoResource {
 
     private final EnderecoService enderecoService;
@@ -25,10 +25,9 @@ public class EnderecoResource {
 
     @GetMapping
     public ResponseEntity<List<EnderecoDTO>> listar() {
-        ResponseEntity<List<EnderecoDTO>> responseEntity;
         final List<EnderecoDTO> enderecoDTOS = enderecoService.buscarTodosEnderecos();
-        responseEntity = new ResponseEntity<>(enderecoDTOS, HttpStatus.OK);
-        return responseEntity;
+
+        return new ResponseEntity<>(enderecoDTOS, HttpStatus.OK);
     }
 
 }

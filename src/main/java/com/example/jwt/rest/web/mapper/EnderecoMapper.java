@@ -5,6 +5,7 @@ import com.example.jwt.rest.web.dto.EnderecoDTO;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class EnderecoMapper {
 
@@ -29,20 +30,11 @@ public class EnderecoMapper {
     }
 
     public static List<Endereco> dtoToEntity(List<EnderecoDTO> enderecoDTOS) {
-
-        List<Endereco> enderecos = new ArrayList<>();
-        enderecoDTOS.forEach(enderecoDTO -> {
-            enderecos.add(dtoToEntity(enderecoDTO));
-        });
-        return enderecos;
+        return enderecoDTOS.stream().map(EnderecoMapper::dtoToEntity).collect(Collectors.toList());
     }
 
     public static List<EnderecoDTO> entityToDTO(List<Endereco> enderecos) {
-        List<EnderecoDTO> enderecoDTOS = new ArrayList<>();
-        enderecos.forEach(endereco -> {
-            enderecoDTOS.add(entityToDTO(endereco));
-        });
+        return enderecos.stream().map(EnderecoMapper::entityToDTO).collect(Collectors.toList());
 
-        return enderecoDTOS;
     }
 }
